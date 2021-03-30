@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Form from './Form';
 import Thanks from './Thanks';
+import Game from './Game';
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,7 +21,6 @@ function App() {
   // const [postal, setPostal] = useState('');
   const handleFirstNameChange = (e) => {
     setFName(e.target.value);
-    console.log(e);
   }
   const handleLastNameChange = (e) => {
     setLName(e.target.value);
@@ -72,6 +72,7 @@ function App() {
                                           ></Form>}>
           </Route>
           <Route path="/thanks" children={<Thanks lname={lname} fname={fname} address={address} city={city} province={province} email={email} phone={phone}></Thanks>}></Route>
+          <Route path="/game" component={Game}></Route>
         </Switch>
       </div>
     </Router>

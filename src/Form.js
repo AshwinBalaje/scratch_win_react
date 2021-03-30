@@ -2,7 +2,6 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 
 function Form(props) {
-    // document.querySelector("#submit").addEventListener('click', goToThanks);
     function goToThanks(e) {
         e.preventDefault();
         console.log(props);
