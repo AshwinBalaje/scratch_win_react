@@ -24,26 +24,39 @@ function App() {
   const [postalCode, setPostalCode] = useState('');
   const [userDOB, setDOB] = useState('');
 
-  const [error, setError] = useState('');
+  const [fnameError, setFNameError] = useState('');
+  const [lnameError, setLNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [addressError, setAddressError] = useState('');
+  const [cityError, setCityError] = useState('');
+  const [provinceError, setProvinceError] = useState('');
+  const [postalCodeError, setPostalCodeError] = useState('');
+  const [userDOBError, setDOBError] = useState('');
 
-  // let errorCheck = {fname: false, lname: false, email: false, phone: false, address: false, city: false, province: false, postalCode: false, userDOB: false};
-  const [errorCheck, setErrorCheck] = useState(false);
+  //let isComplete = {fname: false, lname: false, email: false, phone: false, address: false, city: false, province: false, postalCode: false, userDOB: false};
+  //const [errCheckFName, setErrCheckFName] = useState(false);
+  const [isFNameError, setIsFNameError] = useState(true);
+  const [isLNameError, setIsLNameError] = useState(true);
+  const [isEmailError, setIsEmailError] = useState(true);
+  const [isPhoneError, setIsPhoneError] = useState(true);
+  const [isAddressError, setIsAddressError] = useState(true);
+  const [isCityError, setIsCityError] = useState(true);
+  const [isProvinceError, setIsProvinceError] = useState(true);
+  const [isPostalCodeError, setIsPostalCodeError] = useState(true);
+  const [isDOBError, setIsDOBError] = useState(true);
   
   
   const handleFirstNameChange = (e) => {
     let pattern = /^[a-zA-Z]+$/;
     
     if(pattern.test(e.target.value)){
-      // errorCheck.fname = false;
       setFName(e.target.value);
-      setErrorCheck(true);
-      // console.log(errorCheck.fname);
+      setFNameError("");
+      setIsFNameError(false);
     } else {
-      // errorCheck.fname = true;
-      setErrorCheck(false);
-      // setError('Please enter correct name')
-      setError("Please enter correct firstname.");
-      // console.log(errorCheck.fname);
+      setFNameError("Please enter a valid first name.");
+      setIsFNameError(true);
     }
     console.log(e);
   }
@@ -52,11 +65,12 @@ function App() {
     let pattern = /^[a-zA-Z]+$/;
     
     if(pattern.test(e.target.value)){
-      errorCheck.lname = false;
       setLName(e.target.value);
+      setLNameError("");
+      setIsLNameError(false);
     } else {
-      errorCheck.lname = true;
-      console.log(errorCheck.lname);
+      setLNameError("Please enter a valid last name.");
+      setIsLNameError(true);
     }
     console.log(e);
   }
@@ -65,11 +79,12 @@ function App() {
     let pattern = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if(pattern.test(e.target.value)){
-      errorCheck.email = false;
       setEmail(e.target.value);
+      setEmailError("");
+      setIsEmailError(false);
     } else {
-      errorCheck.email = true;
-      console.log(errorCheck.email);
+      setEmailError("Please enter a valid email.");
+      setIsEmailError(true);
     }
     console.log(e);
   }
@@ -78,11 +93,12 @@ function App() {
     let pattern = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
     
     if(pattern.test(e.target.value)){
-      errorCheck.phone = false;
       setPhone(e.target.value);
+      setPhoneError("");
+      setIsPhoneError(false);
     } else {
-      errorCheck.phone = true;
-      console.log(errorCheck.phone);
+      setPhoneError("Please enter a valid phone number.");
+      setIsPhoneError(true);
     }
     console.log(e);
   }
@@ -91,11 +107,12 @@ function App() {
     let pattern = /^(?:[Pp][Oo]\s[Bb][Oo][Xx]|[0-9]+)\s(?:[0-9A-Za-z\.'#]|[^\S\r\n])+/;
     
     if(pattern.test(e.target.value)){
-      errorCheck.address = false;
       setAddress(e.target.value);
+      setAddressError("");
+      setIsAddressError(false);
     } else {
-      errorCheck.address = true;
-      console.log(errorCheck.address);
+      setAddressError("Please enter a valid address line.");
+      setIsAddressError(true);
     }
     console.log(e);
   }
@@ -104,11 +121,12 @@ function App() {
     let pattern = /^[a-zA-Z]+$/;
 
     if(pattern.test(e.target.value)){
-      errorCheck.city = false;
       setCity(e.target.value);
+      setCityError("");
+      setIsCityError(false);
     }else {
-      errorCheck.city = true;
-      console.log(errorCheck.city);
+      setCityError("Please enter a valid city.");
+      setIsCityError(true);
     }
     console.log(e);
   }
@@ -117,11 +135,12 @@ function App() {
     let pattern = /^[a-zA-Z]+$/;
 
     if(pattern.test(e.target.value)){
-      errorCheck.province = false;
       setProvince(e.target.value);
+      setProvinceError("");
+      setIsProvinceError(false);
     } else {
-      errorCheck.province = true;
-      console.log(errorCheck.province);
+      setProvinceError("Please select a valid province.");
+      setIsProvinceError(true);
     }
     console.log(e);
   }
@@ -130,11 +149,12 @@ function App() {
     let pattern = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
 
     if(pattern.test(e.target.value)){
-      errorCheck.postalCode = false;
       setPostalCode(e.target.value);
+      setPostalCodeError("");
+      setIsPostalCodeError(false);
     } else {
-      errorCheck.postalCode = true;
-      console.log(errorCheck.postalCode);
+      setPostalCodeError("Please enter a valid postal code.");
+      setIsPostalCodeError(true);
     }
     console.log(e);
   }
@@ -143,10 +163,12 @@ function App() {
     let pattern = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
 
     if(pattern.test(e.target.value)){
-      errorCheck.userDOB = false;
       setDOB(e.target.value);
+      setDOBError("");
+      setIsDOBError(false);
     } else {
-      errorCheck.userDOB = true;
+      setDOBError("Please select a valid date of birth.");
+      setIsDOBError(true);
     }
     console.log(e);
   }
@@ -185,8 +207,26 @@ function App() {
                                                 handleProvinceChange={(e) => handleProvinceChange(e)}
                                                 handlePostalCodeChange={(e) => handlePostalCodeChange(e)}
                                                 handleDOBChange={(e) => handleDOBChange(e)}
-                                                error={error}
-                                                errorCheck={errorCheck}>
+                                                fnameError={fnameError}
+                                                lnameError={lnameError}
+                                                emailError={emailError}
+                                                phoneError={phoneError}
+                                                addressError={addressError}
+                                                cityError={cityError}
+                                                provinceError={provinceError}
+                                                postalCodeError={postalCodeError}
+                                                userDOBError={userDOBError}
+                                                
+                                                isFNameError={isFNameError}
+                                                isLNameError={isLNameError}
+                                                isEmailError={isEmailError}
+                                                isPhoneError={isPhoneError}
+                                                isAddressError={isAddressError}
+                                                isCityError={isCityError}
+                                                isProvinceError={isProvinceError}
+                                                isPostalCodeError={isPostalCodeError}
+                                                isDOBError={isDOBError}
+                                                >
                                                 </Form>}>
           </Route>
           <Route path="/thanks" children={<Thanks lname={lname} fname={fname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} ></Thanks>}></Route>

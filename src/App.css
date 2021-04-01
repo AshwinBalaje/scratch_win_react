@@ -157,6 +157,7 @@ label {
 .submitBtn {
   background-color: #FFD700;
   margin-top: 20px;
+  margin-bottom: 10px;
   padding-left: 10px;
   color: white;
   border-radius: 10px;

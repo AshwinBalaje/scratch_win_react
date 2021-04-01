@@ -1,15 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {withRouter} from 'react-router-dom';
 
 function Form(props) {
     // document.querySelector("#submit").addEventListener('click', goToThanks);
+
+    const [formError, setFormError] = useState('');
+
     function goToThanks(e) {
         
-        
-        e.preventDefault();
-        console.log(props);
-        console.log("will we go anywhere?");
-        props.history.push('/thanks');
+        if(props.isFNameError === true || props.isLNameError === true || props.isEmailError === true || props.isPhoneError === true || props.isAddressError === true || props.isCityError === true || props.isProvinceError === true || props.isPostalCodeError === true || props.isDOBError === true){
+            e.preventDefault();
+            setFormError("Please complete all required fields.");
+        } else {
+            e.preventDefault();
+            console.log(props);
+            console.log("will we go anywhere?");
+            setFormError("");
+            props.history.push('/thanks');
+        }
     }
     return (
         <div className="grid-container formContainer showDiv">
@@ -26,32 +34,32 @@ function Form(props) {
                         <div className="fieldContainer">
                             <label className="labelName">First Name</label>
                             <input className="inputField" id="fName" type="text" onChange={props.handleFirstNameChange}/>
-                            <p id="firstNameError" className={`${props.errorCheck ? "" : "errMsg"}`} >{props.error} {props.errorCheck}</p>
+                            <p id="firstNameError" className="errMsg">{props.fnameError}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">Last Name</label>
                             <input className="inputField" id="lName" type="text" onChange={props.handleLastNameChange}/>
-                            <p id="lastNameError" className="errMsg"></p>
+                            <p id="lastNameError" className="errMsg"> {props.lnameError}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">Email</label>
                             <input className="inputField" id="email" type="text" onChange={props.handleEmailChange}/>
-                            <p id="emailAddressError" className="errMsg"></p>
+                            <p id="emailAddressError" className="errMsg">{props.emailError}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">Phone</label>
                             <input className="inputField" id="phone" type="text" onChange={props.handlePhoneChange}/>
-                            <p id="phoneNumberError" className="errMsg"></p>
+                            <p id="phoneNumberError" className="errMsg">{props.phoneError}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">Address Line</label>
                             <input className="inputField" id="address" type="text" onChange={props.handleAddressChange}/>
-                            <p id="addressError" className="errMsg"></p>
+                            <p id="addressError" className="errMsg">{props.addressError}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">City</label>
                             <input className="inputField" id="city" type="text" onChange={props.handleCityChange}/>
-                            <p id="cityError" className="errMsg"></p>
+                            <p id="cityError" className="errMsg">{props.cityError}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">Province</label>
@@ -71,17 +79,17 @@ function Form(props) {
                                 <option value="SK">Saskatchewan</option>
                                 <option value="YT">Yukon</option>
                             </select>
-                            <p id="provinceError" className="errMsg"></p>
+                            <p id="provinceError" className="errMsg">{props.provinceError}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">Postal Code</label>
                             <input className="inputField" id="postalCode" type="text" onChange={props.handlePostalCodeChange}/>
-                            <p id="postalCodeError" className="errMsg"></p>
+                            <p id="postalCodeError" className="errMsg">{props.postalCodeError}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">Date of Birth</label>
                             <input className="inputField" id="userDob" type="date" onChange={props.handleDOBChange}/>
-                            <p id="userDobError" className="errMsg"></p>
+                            <p id="userDobError" className="errMsg">{props.userDOBError}</p>
                         </div>
 
                         <div className="fieldContainer">
@@ -96,6 +104,7 @@ function Form(props) {
                         </div>
                         
                         <button type="submit" id="formSubmitBtn" className="btns submitBtn"><p>Submit<span>&#62;</span></p></button>
+                        <p id="formError" className="errMsg">{formError}</p>
                     </form>
                 </div>
             </div>
