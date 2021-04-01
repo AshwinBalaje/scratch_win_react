@@ -1,3 +1,35 @@
+@font-face {
+  font-family: 'Segoe UI Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Regular'), url('./assets/fonts/Segoe\ UI.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Segoe UI Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Italic'), url('./assets/fonts/Segoe\ UI\ Bold\ Italic.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Segoe UI Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Bold'), url('./assets/fonts/Segoe\ UI\ Bold.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Segoe UI Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Bold Italic'), url('./assets/fonts/Segoe\ UI\ Bold\ Italic.woff') format('woff');
+}
+
+
 .App {
   text-align: center;
 }
@@ -24,15 +56,141 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+h1 {
+  font-family: 'Segoe UI Bold', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  font-family: 'Segoe UI Bold', sans-serif;
+}
+
+h3 {
+  font-family: 'Segoe UI Bold', sans-serif;
+}
+
+h4 {
+  font-family: 'Segoe UI Bold', sans-serif;
+}
+
+#formTitle {
+  font-family: 'Segoe UI Bold', sans-serif;
+  font-size: 70px;
+  text-align: left;
+}
+
+
+#logo {
+  height: 40px;
+}
+
+.formContainer {
+  margin-top: 30px;
+  margin-bottom: 100px;
+
+}
+
+.formBox {
+  background-color: white;
+  text-align: left;
+  padding: 20px;
+  margin-top: 3rem;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.formBox h2 {
+  font-family: 'Segoe UI Bold', sans-serif;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.formBox h2:before,
+.formBox h2:after {
+  position: absolute;
+  content: '\a0';
+  width: 40%;
+  height: 2px;
+  top: 50%;
+  background-color: #000;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.formBox h2:before {
+  margin-left: -50%;
+  text-align: right;
+  padding-left: 20px;
+}
+
+.formBox h2:after {
+  margin-left: 30px;
+}
+
+label {
+  text-align: left;
+}
+
+.fieldContainer input,
+.fieldContainer select {
+  border-radius: 8px;
+  border: 1px solid black;
+  margin-bottom: 8px;
+}
+
+.fieldContainer {
+  padding-right: 90px;
+}
+
+.formField {
+  border-radius: 8px;
+  border: 1px solid black;
+  margin-bottom: 8px;
+}
+
+.submitBtn {
+  background-color: #FFD700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  width: 120px;
+  text-align: left;
+  cursor: pointer;
+  /* line-height: 40px; */
+}
+
+.submitBtn span,
+.submitBtn p {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 35px;
+}
+
+.submitBtn span {
+  padding-left: 5px;
+}
+
+.submitBtn:hover {
+  background-color: #e2c104;
+}
+
+.titleText {
+  margin-top: 4rem;
+  text-align: left;
+}
+
+/* ERROR CSS */
+
+.errMsg {
+  color: red;
 }

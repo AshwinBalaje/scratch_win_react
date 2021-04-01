@@ -1,5 +1,7 @@
 import {useHistory} from 'react-router-dom';
 
+import checkmark from './assets/images/checkmark.svg';
+
 function Thanks(props){
     const history = useHistory();
     function goToGame(e) {
@@ -8,13 +10,22 @@ function Thanks(props){
         history.push('/game')
     }
     return (
-        <section>
-            <h2>Thanks so much {props.fname} {props.lname} {props.address} {props.city} {props.phone} {props.province} {props.email}!</h2>
-            <p>You are awesome</p>
-            <div>
-                <button onClick={goToGame}>Start Game</button>
+        <div className="grid-container confirmContainer hideDiv">
+            <div className="grid-x grid-padding-x">
+
+                <div className="large-5 small-10 small-offset-1 cell titleText">
+                    <img src={checkmark} alt="checkmark" id="checkmark"/>
+                    <h1>Thanks {props.fname}! <br/> You are all set.</h1>
+                </div>
+
+                <div className="large-5 large-offset-1 small-10 small-offset-1 cell confirmBox">
+                    <h2>Confirmation</h2>
+                    <p>Thanks for registration. Let's play and win some prizes.</p>
+                    <button id="confirmationBtn" className="submitBtn" onClick={goToGame}><p>Continue<span>&#62;</span></p></button>
+                </div>
+
             </div>
-        </section>
+        </div>
     )
 }
 export default Thanks;
