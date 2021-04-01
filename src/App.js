@@ -36,6 +36,7 @@ function App() {
   const [provinceError, setProvinceError] = useState('');
   const [postalCodeError, setPostalCodeError] = useState('');
   const [userDOBError, setDOBError] = useState('');
+  const [checkboxError, setCheckboxError] = useState('');
 
   //let isComplete = {fname: false, lname: false, email: false, phone: false, address: false, city: false, province: false, postalCode: false, userDOB: false};
   //const [errCheckFName, setErrCheckFName] = useState(false);
@@ -48,6 +49,7 @@ function App() {
   const [isProvinceError, setIsProvinceError] = useState(true);
   const [isPostalCodeError, setIsPostalCodeError] = useState(true);
   const [isDOBError, setIsDOBError] = useState(true);
+  const [isCheckboxError, setIsCheckboxError] = useState(true);
   
   
   const handleFirstNameChange = (e) => {
@@ -58,7 +60,7 @@ function App() {
       setFNameError("");
       setIsFNameError(false);
     } else {
-      setFNameError("Please enter a valid first name.");
+      setFNameError("* Please enter a valid first name.");
       setIsFNameError(true);
     }
     console.log(e);
@@ -72,7 +74,7 @@ function App() {
       setLNameError("");
       setIsLNameError(false);
     } else {
-      setLNameError("Please enter a valid last name.");
+      setLNameError("* Please enter a valid last name.");
       setIsLNameError(true);
     }
     console.log(e);
@@ -86,7 +88,7 @@ function App() {
       setEmailError("");
       setIsEmailError(false);
     } else {
-      setEmailError("Please enter a valid email.");
+      setEmailError("* Please enter a valid email.");
       setIsEmailError(true);
     }
     console.log(e);
@@ -100,7 +102,7 @@ function App() {
       setPhoneError("");
       setIsPhoneError(false);
     } else {
-      setPhoneError("Please enter a valid phone number.");
+      setPhoneError("* Please enter a valid phone number.");
       setIsPhoneError(true);
     }
     console.log(e);
@@ -114,7 +116,7 @@ function App() {
       setAddressError("");
       setIsAddressError(false);
     } else {
-      setAddressError("Please enter a valid address line.");
+      setAddressError("* Please enter a valid address line.");
       setIsAddressError(true);
     }
     console.log(e);
@@ -128,7 +130,7 @@ function App() {
       setCityError("");
       setIsCityError(false);
     }else {
-      setCityError("Please enter a valid city.");
+      setCityError("* Please enter a valid city.");
       setIsCityError(true);
     }
     console.log(e);
@@ -142,7 +144,7 @@ function App() {
       setProvinceError("");
       setIsProvinceError(false);
     } else {
-      setProvinceError("Please select a province.");
+      setProvinceError("* Please select a province.");
       setIsProvinceError(true);
     }
     console.log(e);
@@ -156,7 +158,7 @@ function App() {
       setPostalCodeError("");
       setIsPostalCodeError(false);
     } else {
-      setPostalCodeError("Please enter a valid postal code.");
+      setPostalCodeError("* Please enter a valid postal code.");
       setIsPostalCodeError(true);
     }
     console.log(e);
@@ -170,15 +172,23 @@ function App() {
       setDOBError("");
       setIsDOBError(false);
     } else {
-      setDOBError("Please select a valid date of birth.");
+      setDOBError("* Please select a valid date of birth.");
       setIsDOBError(true);
     }
     console.log(e);
   }
 
-  const handleTermsCheckboxChange = (e) => {
-    setProvince(e.target.value);
-    console.log(e);
+  const handleCheckboxChange = (e) => {
+    
+    if(e.target.checked==true){
+      setCheckboxError("");
+      setIsCheckboxError(false);
+    } else {
+      setCheckboxError("* Please accept terms to continue.");
+      setIsCheckboxError(true);
+    }
+
+      
   }
 
   return (
@@ -188,7 +198,7 @@ function App() {
       <div className="grid-container">
         <div className="grid-x grid-padding-x">
           <div className="large-2 cell">
-            <img id="logo" src={Logo} alt="Buy More Dollars"/>
+            <Link to="/"><img id="logo" src={Logo} alt="Buy More Dollars"/></Link>
           </div>
         </div>
       </div>
@@ -212,6 +222,8 @@ function App() {
                                                 handleProvinceChange={(e) => handleProvinceChange(e)}
                                                 handlePostalCodeChange={(e) => handlePostalCodeChange(e)}
                                                 handleDOBChange={(e) => handleDOBChange(e)}
+                                                handleCheckboxChange={(e) => handleCheckboxChange(e)}
+                                                
                                                 fnameError={fnameError}
                                                 lnameError={lnameError}
                                                 emailError={emailError}
@@ -221,6 +233,7 @@ function App() {
                                                 provinceError={provinceError}
                                                 postalCodeError={postalCodeError}
                                                 userDOBError={userDOBError}
+                                                checkboxError={checkboxError}
                                                 
                                                 isFNameError={isFNameError}
                                                 isLNameError={isLNameError}
@@ -231,10 +244,11 @@ function App() {
                                                 isProvinceError={isProvinceError}
                                                 isPostalCodeError={isPostalCodeError}
                                                 isDOBError={isDOBError}
+                                                isCheckboxError={isCheckboxError}
                                                 >
                                                 </Form>}>
           </Route>
-          <Route path="/thanks" children={<Thanks lname={lname} fname={fname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} ></Thanks>}></Route>
+          <Route path="/thanks" children={<Thanks fname={fname} lname={lname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} ></Thanks>}></Route>
           <Route path="/game" component={Game}></Route>
           <Route path="/legal" component={Legal}></Route>            
         </Switch>

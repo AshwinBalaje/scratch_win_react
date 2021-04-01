@@ -209,9 +209,9 @@ label {
   overflow-y: scroll;
 }
 
-.legalContainer h1,
-.legalContainer h2,
-.legalContainer h3,
-.legalContainer h4 {
+.grid-container h1,
+.grid-container h2,
+.grid-container h3,
+.grid-container h4 {
   font-family: 'Segoe UI Bold', sans-serif;
 }

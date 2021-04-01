@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 
 function Form(props) {
     // document.querySelector("#submit").addEventListener('click', goToThanks);
@@ -8,9 +8,9 @@ function Form(props) {
 
     function goToThanks(e) {
         
-        if(props.isFNameError === true || props.isLNameError === true || props.isEmailError === true || props.isPhoneError === true || props.isAddressError === true || props.isCityError === true || props.isProvinceError === true || props.isPostalCodeError === true || props.isDOBError === true){
+        if(props.isFNameError === true || props.isLNameError === true || props.isEmailError === true || props.isPhoneError === true || props.isAddressError === true || props.isCityError === true || props.isProvinceError === true || props.isPostalCodeError === true || props.isDOBError === true || props.isCheckboxError === true){
             e.preventDefault();
-            setFormError("Please complete all required fields.");
+            setFormError("* Please complete all required fields.");
         } else {
             e.preventDefault();
             console.log(props);
@@ -93,9 +93,9 @@ function Form(props) {
                         </div>
 
                         <div className="fieldContainer">
-                            <input type="checkbox" id="termsCheckbox" onChange={props.handleTermsCheckboxChange}/>
-                            <label className="labelName">I consent to the <span id="legalLink">Terms and Conditions & Privacy Policy</span>.</label><br/>
-                            <p id="termsCheckboxError" className="errMsg"></p>
+                            <input type="checkbox" id="termsCheckbox" onChange={props.handleCheckboxChange}/>
+                            <label className="labelName">I consent to the <Link to="/legal">Terms and Conditions & Privacy Policy</Link>.</label><br/>
+                            <p id="termsCheckboxError" className="errMsg">{props.checkboxError}</p>
                         </div>
 
                         <div className="fieldContainer">

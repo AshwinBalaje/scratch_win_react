@@ -43,13 +43,24 @@ function Game() {
     };
 
     return (
-        <section>
-            <ScratchCard {...settings} onLoad={check()}>
-                {msg}
-            </ScratchCard>;
-            {/* <ScratchOff>{secret}</ScratchOff>
-            <img src={image}/> */}
-        </section>
+        <div className="grid-container gameContainer showDiv">
+            <div className="grid-x grid-padding-x">
+
+                <div className="large-4 small-10 small-offset-1 cell titleText">
+                    <h1 id="formTitle">Let's Win Some Prizes!</h1>
+                    <p>Rules</p>
+                </div>
+
+                <div className="large-6 large-offset-1 small-10 small-offset-1 cell formBox">
+                    <h2>Lucky Scratch</h2>
+                    <ScratchCard {...settings} onLoad={check()}>
+                        {msg}
+                    </ScratchCard>
+                    {/* <ScratchOff>{secret}</ScratchOff>
+                    <img src={image}/> */}
+                </div>
+            </div>
+        </div>
     );
 }
 

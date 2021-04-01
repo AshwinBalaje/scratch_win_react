@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
-import {withRouter} from 'react-router-dom';
+import React from 'react';
 
-function Legal(props){
+function Legal(){
     
     return (
         <div className="grid-container legalContainer hideDiv">
