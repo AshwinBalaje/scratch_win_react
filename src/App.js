@@ -26,6 +26,7 @@ function App() {
   const [province, setProvince] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [userDOB, setDOB] = useState('');
+  const [termsCheckbox, setTermsCheckbox] = useState('');
 
   const [fnameError, setFNameError] = useState('');
   const [lnameError, setLNameError] = useState('');
@@ -181,6 +182,7 @@ function App() {
   const handleCheckboxChange = (e) => {
     
     if(e.target.checked==true){
+      setTermsCheckbox(e.target.value);
       setCheckboxError("");
       setIsCheckboxError(false);
     } else {
@@ -248,7 +250,7 @@ function App() {
                                                 >
                                                 </Form>}>
           </Route>
-          <Route path="/thanks" children={<Thanks fname={fname} lname={lname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} ></Thanks>}></Route>
+          <Route path="/thanks" children={<Thanks fname={fname} lname={lname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} termsCheckbox={termsCheckbox} ></Thanks>}></Route>
           <Route path="/game" component={Game}></Route>
           <Route path="/legal" component={Legal}></Route>            
         </Switch>
