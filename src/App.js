@@ -24,22 +24,26 @@ function App() {
   const [postalCode, setPostalCode] = useState('');
   const [userDOB, setDOB] = useState('');
 
-  const [error, setError] = useState('Please enter the correct value.');
+  const [error, setError] = useState('');
 
-  let errorCheck = {fname: false, lname: false, email: false, phone: false, address: false, city: false, province: false, postalCode: false, userDOB: false};
+  // let errorCheck = {fname: false, lname: false, email: false, phone: false, address: false, city: false, province: false, postalCode: false, userDOB: false};
+  const [errorCheck, setErrorCheck] = useState(false);
   
   
   const handleFirstNameChange = (e) => {
     let pattern = /^[a-zA-Z]+$/;
     
     if(pattern.test(e.target.value)){
-      errorCheck.fname = false;
+      // errorCheck.fname = false;
       setFName(e.target.value);
-      console.log(errorCheck.fname);
+      setErrorCheck(true);
+      // console.log(errorCheck.fname);
     } else {
-      errorCheck.fname = true;
-      this.setError("Please enter correct firstname.");
-      console.log(errorCheck.fname);
+      // errorCheck.fname = true;
+      setErrorCheck(false);
+      // setError('Please enter correct name')
+      setError("Please enter correct firstname.");
+      // console.log(errorCheck.fname);
     }
     console.log(e);
   }
@@ -156,9 +160,9 @@ function App() {
     <Router>
       <div className="App">
 
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="large-2 cell">
+      <div className="grid-container">
+        <div className="grid-x grid-padding-x">
+          <div className="large-2 cell">
             <img id="logo" src={Logo} alt="Buy More Dollars"/>
           </div>
         </div>
@@ -181,8 +185,9 @@ function App() {
                                                 handleProvinceChange={(e) => handleProvinceChange(e)}
                                                 handlePostalCodeChange={(e) => handlePostalCodeChange(e)}
                                                 handleDOBChange={(e) => handleDOBChange(e)}
-                                                
-                                          ></Form>}>
+                                                error={error}
+                                                errorCheck={errorCheck}>
+                                                </Form>}>
           </Route>
           <Route path="/thanks" children={<Thanks lname={lname} fname={fname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} ></Thanks>}></Route>
         </Switch>

@@ -187,3 +187,9 @@ label {
   margin-top: 4rem;
   text-align: left;
 }
+
+/* ERROR CSS */
+
+.errMsg {
+  color: red;
+}

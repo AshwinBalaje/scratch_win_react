@@ -26,7 +26,7 @@ function Form(props) {
                         <div className="fieldContainer">
                             <label className="labelName">First Name</label>
                             <input className="inputField" id="fName" type="text" onChange={props.handleFirstNameChange}/>
-                            <p id="firstNameError" className="errMsg"></p>
+                            <p id="firstNameError" className={`${props.errorCheck ? "" : "errMsg"}`} >{props.error} {props.errorCheck}</p>
                         </div>
                         <div className="fieldContainer">
                             <label className="labelName">Last Name</label>
