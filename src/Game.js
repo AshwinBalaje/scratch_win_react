@@ -13,30 +13,6 @@ function Game() {
 
     function check(i, msg) {
         console.log(i);
-        if(i%2 == 0) {
-            msg = 'Better Luck Next Time. But you get $2.00 as a complimentory gift';
-            console.log(msg);
-        }
-        else if(i%5 == 0) {
-            msg = 'Congratulations You have won 20 points of BuyMore Dollars';
-            console.log(msg);
-        }
-        else if(i%3 == 0) {
-            msg = 'Congratulations You have won 100 points of BuyMore Dollars';
-            console.log(msg);
-        }
-        else if(i%4 == 0) {
-            msg = 'Congratulations You have won 750 points of BuyMore Dollars';
-            console.log(msg);
-        }
-        else if(i%7 == 0) {
-            msg = 'Congratulations You have won 10,000 points of BuyMore Dollars';
-            console.log(msg);
-        }
-        else {
-            msg = 'This is default';
-            console.log(msg);
-        }
     }
 
     const settings = {
@@ -50,7 +26,7 @@ function Game() {
     return (
         <section>
             <ScratchCard {...settings}>
-                {msg}
+                this is temp
             </ScratchCard>;
             {/* <ScratchOff>{secret}</ScratchOff>
             <img src={image}/> */}
