@@ -61,14 +61,6 @@
   color: white;
 }
 
-
-
-
-
-#logo {
-  height: 60px;
-}
-
 .formContainer {
   margin-top: 30px;
   padding-bottom: 100px;
@@ -92,14 +84,24 @@
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
+.winBox {
+  text-align: center;
+}
+
+.gameBox img {
+  width: 100%;
+}
+
 .homeBox {
   background-color: white;
-  text-align: left;
+  text-align: center;
   padding: 20px;
   margin-bottom: 50px;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+
+  overflow: auto;
 }
 
 .formBoxTitle {
@@ -303,7 +305,7 @@ label {
 #logo {
   margin-top: 20px;
   margin-bottom: 10px;
-  height: 60px;
+  height: 120px;
   cursor: pointer;
 }
 
@@ -328,6 +330,10 @@ label {
   text-shadow: 0px 0px 10px black;
 }
 
-a {
+li a {
   color: white !important;
+}
+
+#homeImage {
+  width: 50%;
 }

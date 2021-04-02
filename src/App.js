@@ -9,6 +9,8 @@ import Form from './Form';
 import Legal from './Legal';
 import Thanks from './Thanks';
 import Game from './Game';
+import WinPage from './WinPage';
+import LossPage from './LossPage';
 
 import {
   BrowserRouter as Router,
@@ -182,7 +184,7 @@ function App() {
 
   const handleCheckboxChange = (e) => {
     
-    if(e.target.checked==true){
+    if(e.target.checked===true){
       setTermsCheckbox(e.target.value);
       setCheckboxError("");
       setIsCheckboxError(false);
@@ -208,16 +210,18 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Form</Link>
+              <Link to="/form">Form</Link>
               <Link to="/thanks">thanks</Link>
               <Link to="/legal">legal</Link>
-              <Link to="/home">Home</Link>
+              <Link to="/">Home</Link>
+              <Link to="/winpage">Win</Link>
+              <Link to="/losspage">Loss</Link>
             </li>
           </ul>
         </nav>
         {/* <h1>{{fname}} | {lname} | {address} | {city} | {phone} | {province} | {email}</h1> */}
         <Switch>
-          <Route exact path="/" children={<Form handleFirstNameChange={(e) => handleFirstNameChange(e)}
+          <Route path="/form" children={<Form handleFirstNameChange={(e) => handleFirstNameChange(e)}
                                                 handleLastNameChange={(e) => handleLastNameChange(e)}
                                                 handleEmailChange={(e) => handleEmailChange(e)}
                                                 handlePhoneChange={(e) => handlePhoneChange(e)}
@@ -255,7 +259,9 @@ function App() {
           <Route path="/thanks" children={<Thanks fname={fname} lname={lname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} termsCheckbox={termsCheckbox} ></Thanks>}></Route>
           <Route path="/game" component={Game}></Route>
           <Route path="/legal" component={Legal}></Route> 
-          <Route path="/home" component={Home}></Route>              
+          <Route exact path="/" component={Home}></Route>  
+          <Route path="/winpage" component={WinPage}></Route>
+          <Route path="/losspage" component={LossPage}></Route>            
         </Switch>
       </div>
     </Router>
