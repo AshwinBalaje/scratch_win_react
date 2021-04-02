@@ -26,6 +26,8 @@ function Form(props) {
                 <div className="large-5 small-10 small-offset-1 cell titleText">
                     <h1 id="formTitle">Lets Get Started</h1>
                     <p>Please fill out the form to enter the contest.</p>
+                    <p>Winners of the contest must answer a skill testing question.</p>
+                    <p>Winners will be determined by random draw, but may have their entries removed for any reason by the leadership team of BuyMore Dollars Inc.</p>
                 </div>
 
                 <div className="large-5 large-offset-1 small-10 small-offset-1 cell formBox">

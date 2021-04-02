@@ -4,6 +4,7 @@ import './lib/foundation.css';
 
 import Logo from './assets/images/logo.png';
 
+import Home from './Home';
 import Form from './Form';
 import Legal from './Legal';
 import Thanks from './Thanks';
@@ -207,9 +208,10 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Form</Link>
               <Link to="/thanks">thanks</Link>
               <Link to="/legal">legal</Link>
+              <Link to="/home">Home</Link>
             </li>
           </ul>
         </nav>
@@ -252,7 +254,8 @@ function App() {
           </Route>
           <Route path="/thanks" children={<Thanks fname={fname} lname={lname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} termsCheckbox={termsCheckbox} ></Thanks>}></Route>
           <Route path="/game" component={Game}></Route>
-          <Route path="/legal" component={Legal}></Route>            
+          <Route path="/legal" component={Legal}></Route> 
+          <Route path="/home" component={Home}></Route>              
         </Switch>
       </div>
     </Router>
