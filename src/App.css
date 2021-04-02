@@ -29,13 +29,14 @@
   src: local('Segoe UI Bold Italic'), url('./assets/fonts/Segoe\ UI\ Bold\ Italic.woff') format('woff');
 }
 
-.vsc-initialized {
+#root {
   text-align: left;
   background-image: url(./assets/images/background.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   font-family: 'Segoe UI Regular';
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -82,13 +83,32 @@
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
-.formBoxTitle {
-  background-color: rgba(0, 0, 0, 0.5);
+.gameBox {
+  background-color: white;
+  text-align: left;
+  padding: 1rem 3rem !important;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.homeBox {
+  background-color: white;
   text-align: left;
   padding: 20px;
-  /* -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5); */
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.formBoxTitle {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
 #formTitle {
@@ -125,6 +145,40 @@
 }
 
 .formBox h2:before {
+  margin-left: -50%;
+  text-align: right;
+  padding-left: 20px;
+}
+
+.gameBox h2 {
+  font-family: 'Segoe UI Bold', sans-serif;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+
+.gameBox h2:after {
+  margin-left: 30px;
+}
+
+.gameBox h2:before,
+.gameBox h2:after {
+  position: absolute;
+  content: '\a0';
+  width: 40%;
+  height: 2px;
+  top: 50%;
+  background-color: #000;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.gameBox h2:before {
   margin-left: -50%;
   text-align: right;
   padding-left: 20px;
@@ -188,6 +242,7 @@ label {
 
 .titleText {
   text-align: left;
+  text-shadow: 0px 0px 10px black;
 }
 
 /* ERROR CSS */
@@ -264,4 +319,15 @@ label {
 
 .gameTitle h1 {
   font-size: 52px;
+}
+
+.gameTitle li,
+.gameTitle Link {
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 0px 0px 10px black;
+}
+
+a {
+  color: white !important;
 }
