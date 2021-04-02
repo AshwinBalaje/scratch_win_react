@@ -14,7 +14,7 @@ import LossPage from './LossPage';
 import SkillTest from './SkillTest';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
@@ -208,18 +208,6 @@ function App() {
           </div>
         </div>
       </div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/form">Form</Link>
-              <Link to="/thanks">thanks</Link>
-              <Link to="/legal">legal</Link>
-              <Link to="/">Home</Link>
-              <Link to="/winpage">Win</Link>
-              <Link to="/losspage">Loss</Link>
-            </li>
-          </ul>
-        </nav>
         {/* <h1>{{fname}} | {lname} | {address} | {city} | {phone} | {province} | {email}</h1> */}
         <Switch>
           <Route path="/form" children={<Form handleFirstNameChange={(e) => handleFirstNameChange(e)}
