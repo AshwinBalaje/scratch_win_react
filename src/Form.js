@@ -23,7 +23,7 @@ function Form(props) {
         <div className="grid-container formContainer showDiv">
             <div className="grid-x grid-padding-x">
 
-                <div className="large-5 small-10 small-offset-1 cell titleText">
+                <div className="large-5 small-10 small-offset-1 cell titleText formBox">
                     <h1 id="formTitle">Lets Get Started</h1>
                     <p>Please fill out the form to enter the contest.</p>
                     <p>Winners of the contest must answer a skill testing question.</p>

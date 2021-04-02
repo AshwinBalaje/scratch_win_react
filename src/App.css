@@ -61,16 +61,11 @@
 }
 
 
-#formTitle {
-  font-family: 'Segoe UI Bold', sans-serif;
-  font-size: 70px;
-  text-align: left;
-  color: white;
-}
+
 
 
 #logo {
-  height: 40px;
+  height: 60px;
 }
 
 .formContainer {
@@ -86,6 +81,25 @@
   -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
+
+.formBoxTitle {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+  padding: 20px;
+  /* -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5); */
+}
+
+#formTitle {
+  font-family: 'Segoe UI Bold', sans-serif;
+  font-size: 70px;
+  text-align: left;
+  color: white;
+  opacity: 1;
+}
+
+
 
 .formBox h2 {
   font-family: 'Segoe UI Bold', sans-serif;
@@ -218,10 +232,11 @@ label {
 
 .titleText p {
   color: white;
-  text-shadow: 4px 4px 10px black;
+  font-size: 1.2rem;
+  text-shadow: 0px 0px 20px black;
 }
 
-.confirmTitle {
+.formContainer .confirmTitle {
   text-align: center;
 }
 
