@@ -6,7 +6,7 @@ function Legal(){
         <div className="grid-container legalContainer hideDiv">
             <div className="grid-x grid-padding-x">
 
-                <div className="large-10 small-10 small-offset-1 cell">
+                <div className="large-10 small-10 small-offset-1 cell titleText">
                     <h1>Legal and Consent</h1>
                     <p>Last updated: February 12th 2021</p>
                 </div>

@@ -29,9 +29,13 @@
   src: local('Segoe UI Bold Italic'), url('./assets/fonts/Segoe\ UI\ Bold\ Italic.woff') format('woff');
 }
 
-
-.App {
+.vsc-initialized {
   text-align: left;
+  background-image: url(./assets/images/background.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Segoe UI Regular';
 }
 
 .App-logo {
@@ -57,26 +61,11 @@
 }
 
 
-h1 {
-  font-family: 'Segoe UI Bold', sans-serif;
-}
-
-h2 {
-  font-family: 'Segoe UI Bold', sans-serif;
-}
-
-h3 {
-  font-family: 'Segoe UI Bold', sans-serif;
-}
-
-h4 {
-  font-family: 'Segoe UI Bold', sans-serif;
-}
-
 #formTitle {
   font-family: 'Segoe UI Bold', sans-serif;
   font-size: 70px;
   text-align: left;
+  color: white;
 }
 
 
@@ -86,8 +75,7 @@ h4 {
 
 .formContainer {
   margin-top: 30px;
-  margin-bottom: 100px;
-
+  padding-bottom: 100px;
 }
 
 .formBox {
@@ -144,6 +132,7 @@ label {
   margin-bottom: 8px;
 }
 
+
 .fieldContainer {
   padding-right: 90px;
 }
@@ -185,16 +174,19 @@ label {
 }
 
 .titleText {
-  margin-top: 4rem;
+  margin-top: 2rem;
   text-align: left;
 }
 
 /* ERROR CSS */
 
 .errMsg {
+  font-size: 12px;
+  margin-top: 0px;
   color: red;
 }
 
+.legalContainer {}
 
 .legalBox {
   text-align: left;
@@ -204,7 +196,6 @@ label {
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-
   height: 60vh;
   overflow-y: scroll;
 }
@@ -214,4 +205,47 @@ label {
 .grid-container h3,
 .grid-container h4 {
   font-family: 'Segoe UI Bold', sans-serif;
+}
+
+.grid-container h1 {
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+
+.confirmContainer {
+  padding-bottom: 60vh;
+}
+
+.titleText p {
+  color: white;
+  text-shadow: 4px 4px 10px black;
+}
+
+.confirmTitle {
+  text-align: center;
+}
+
+#checkmark {
+  height: 8vh;
+  margin-bottom: 20px;
+}
+
+#logo {
+  margin-top: 20px;
+}
+
+.confirmBox {
+  /* margin-top: 30px; */
+  background-color: white;
+  height: 14rem;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+
+  margin-top: 70px;
+}
+
+.gameTitle h1 {
+  font-size: 52px;
 }

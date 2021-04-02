@@ -1,6 +1,6 @@
 import {useHistory} from 'react-router-dom';
 
-import checkmark from './assets/images/checkmark.svg';
+import checkmark from './assets/images/checkmark.png';
 
 function Thanks(props){
     const history = useHistory();
@@ -13,7 +13,7 @@ function Thanks(props){
         <div className="grid-container confirmContainer hideDiv">
             <div className="grid-x grid-padding-x">
 
-                <div className="large-5 small-10 small-offset-1 cell titleText">
+                <div className="large-5 small-10 small-offset-1 cell titleText confirmTitle">
                     <img src={checkmark} alt="checkmark" id="checkmark"/>
                     <h1>Thanks {props.fname}! <br/> You are all set.</h1>
                 </div>

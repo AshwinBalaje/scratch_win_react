@@ -62,7 +62,7 @@ function Form(props) {
                             <p id="cityError" className="errMsg">{props.cityError}</p>
                         </div>
                         <div className="fieldContainer">
-                            <label className="labelName">Province</label>
+                            <label className="labelName">Province/Territory</label>
                             <select list="province" id="province" onChange={props.handleProvinceChange}>
                                 <option value=""> </option>
                                 <option value="AB">Alberta</option>

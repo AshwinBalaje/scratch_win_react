@@ -32,22 +32,22 @@ function Game() {
         // }
         // else {
         //     setMsg('Congratulations! You have won 10000 BuyMore Dollar Points.');
-        // }
+        // \}
     }
 
     const settings = {
-        width: 640,
-        height: 480,
+        width: 500,
+        height: 500,
         image: image,
-        finishPercent: 50,
+        finishPercent: 100,
     };
 
     return (
         <div className="grid-container gameContainer showDiv">
             <div className="grid-x grid-padding-x">
 
-                <div className="large-4 small-10 small-offset-1 cell titleText">
-                    <h1 id="formTitle">Let's Win Some Prizes!</h1>
+                <div className="large-4 small-10 small-offset-1 cell titleText gameTitle">
+                    <h1 id="">Let's Win Some Prizes!</h1>
                     <p>Rules</p>
                 </div>
 
