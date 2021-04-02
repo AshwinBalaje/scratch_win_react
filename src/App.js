@@ -11,6 +11,7 @@ import Thanks from './Thanks';
 import Game from './Game';
 import WinPage from './WinPage';
 import LossPage from './LossPage';
+import SkillTest from './SkillTest';
 
 import {
   BrowserRouter as Router,
@@ -261,7 +262,8 @@ function App() {
           <Route path="/legal" component={Legal}></Route> 
           <Route exact path="/" component={Home}></Route>  
           <Route path="/winpage" component={WinPage}></Route>
-          <Route path="/losspage" component={LossPage}></Route>            
+          <Route path="/losspage" component={LossPage}></Route>  
+          <Route path="/skilltest" component={SkillTest}></Route>          
         </Switch>
       </div>
     </Router>
