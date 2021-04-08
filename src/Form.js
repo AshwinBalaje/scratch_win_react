@@ -2,12 +2,9 @@ import React, {useState} from 'react';
 import {withRouter, Link} from 'react-router-dom';
 
 function Form(props) {
-    // document.querySelector("#submit").addEventListener('click', goToThanks);
-
     const [formError, setFormError] = useState('');
 
     function goToThanks(e) {
-        
         if(props.isFNameError === true || props.isLNameError === true || props.isEmailError === true || props.isPhoneError === true || props.isAddressError === true || props.isCityError === true || props.isProvinceError === true || props.isPostalCodeError === true || props.isDOBError === true || props.isCheckboxError === true){
             e.preventDefault();
             setFormError("* Please complete all required fields.");
@@ -16,9 +13,38 @@ function Form(props) {
             console.log(props);
             console.log("will we go anywhere?");
             setFormError("");
+            isUserWinning(props);
             props.history.push('/thanks');
         }
     }
+
+    function isUserWinning(props) {
+        console.log('called is winning function');
+        let winNum = Math.floor(Math.random() * 100) + 1;
+        // let winNum = 10;
+        let winningChance = winNum/100;
+        if(winningChance> 0 && winningChance<0.25) {
+            console.log('if winning is between 0 to 0.25');
+            props.handleGameMsg('Please try again');
+        }
+        else if(winningChance>0.25 && winningChance<0.5) {
+            console.log('if winning is between 0.25 to 0.5');
+            props.handleGameMsg('Congratulations! You have won 20 BuyMore Dollar Points.');
+        }
+        else if(winningChance>0.5 && winningChance<0.75) {
+            console.log('if winning is between 0.5 to 0.75');
+            props.handleGameMsg('Congratulations! You have won 100 BuyMore Dollar Points.');
+        }
+        else if(winningChance>0.75 && winningChance<0.9) {
+            console.log('if winning is between 0.75 to 0.9');
+            props.handleGameMsg('Congratulations! You have won 750 BuyMore Dollar Points.');
+        }
+        else {
+            console.log('if winning is between 0.0 to 1');
+            props.handleGameMsg('Congratulations! You have won 10000 BuyMore Dollar Points.');
+        }
+    }
+
     return (
         <div className="grid-container formContainer showDiv">
             <div className="grid-x grid-padding-x">

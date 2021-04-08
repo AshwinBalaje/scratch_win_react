@@ -55,8 +55,16 @@ function App() {
   const [isPostalCodeError, setIsPostalCodeError] = useState(true);
   const [isDOBError, setIsDOBError] = useState(true);
   const [isCheckboxError, setIsCheckboxError] = useState(true);
-  
-  
+
+  // Setting Game Message
+
+  const [gameMsg, setGameMsg] = useState('');
+
+  const handleGameMsg = (e) => {
+    console.log(e);
+    setGameMsg(e);
+  }
+
   const handleFirstNameChange = (e) => {
     let pattern = /^[a-zA-Z]+$/;
     
@@ -254,11 +262,13 @@ function App() {
                                                 isPostalCodeError={isPostalCodeError}
                                                 isDOBError={isDOBError}
                                                 isCheckboxError={isCheckboxError}
+
+                                                handleGameMsg={(e) => handleGameMsg(e)}
                                                 >
                                                 </Form>}>
           </Route>
           <Route path="/thanks" children={<Thanks fname={fname} lname={lname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} termsCheckbox={termsCheckbox} ></Thanks>}></Route>
-          <Route path="/game" component={Game}></Route>
+          <Route path="/game" children={<Game gameMsg={gameMsg}></Game>}></Route>
           <Route path="/legal" component={Legal}></Route> 
           <Route exact path="/" component={Home}></Route>  
           <Route path="/winpage" component={WinPage}></Route>

@@ -1,4 +1,4 @@
-import WinImage from './assets/images/WinImage.jpg';
+// import WinImage from './assets/images/WinImage.jpg';
 import {useHistory} from 'react-router-dom';
 
 function LossPage(props){

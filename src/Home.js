@@ -16,7 +16,7 @@ function Home(){
 
                 
                 <div className="large-10 large-offset-1 small-10 small-offset-1 cell homeBox">
-                    <img src={HomeImage} id="homeImage"></img><br></br>
+                    <img src={HomeImage} alt="this is a home" id="homeImage"></img><br></br>
                     <button id="confirmationBtn" className="submitBtn" onClick={goToForm}><p>Start<span>&#62;</span></p></button>
                 </div>
 

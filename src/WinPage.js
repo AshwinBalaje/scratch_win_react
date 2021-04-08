@@ -1,4 +1,4 @@
-import WinImage from './assets/images/WinImage.jpg';
+import wining from './assets/images/WinImage.jpg';
 import {useHistory} from 'react-router-dom';
 
 
@@ -21,7 +21,7 @@ function WinPage(props){
 
                 <div className="large-6 large-offset-1 small-10 small-offset-1 cell gameBox winBox">
                     <h2>Lucky Scratch</h2>
-                    <img src={WinImage}></img>
+                    <img src={wining} alt="This is a win"></img>
                     {/* <ScratchOff>{secret}</ScratchOff>
                     <img src={image}/> */}
                 </div>
