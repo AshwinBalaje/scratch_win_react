@@ -209,15 +209,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <Link to="/Thanks">Thanks</Link>
-      <div className="grid-container">
-        <div className="grid-x grid-padding-x">
-          <div className="large-2 cell">
-            <Link to="/"><img id="logo" src={Logo} alt="Buy More Dollars"/></Link>
+        <div className="grid-container">
+          <div className="grid-x grid-padding-x">
+            <div className="large-2 cell">
+              <Link to="/"><img id="logo" src={Logo} alt="Buy More Dollars"/></Link>
+            </div>
           </div>
         </div>
-      </div>
-        {/* <h1>{{fname}} | {lname} | {address} | {city} | {phone} | {province} | {email}</h1> */}
+          {/* <h1>{{fname}} | {lname} | {address} | {city} | {phone} | {province} | {email}</h1> */}
         <Switch>
           <Route path="/form" children={<Form handleFirstNameChange={(e) => handleFirstNameChange(e)}
                                                 handleLastNameChange={(e) => handleLastNameChange(e)}

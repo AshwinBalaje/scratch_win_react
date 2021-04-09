@@ -2,30 +2,26 @@ import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
 function SkillTest() {
-    let [answer, setAnswer] = useState('');
-
-    let[answerError, setAnswerError] = useState('');
-
-    let [next, setNext] = useState(false);
+    
+    
+    let [correct, setCorrect] = useState(false);
+    let [answerError, setAnswerError] = useState('');
 
     const handleAnswerChange = (e) => {
         
-        setAnswer(e.target.value);
-        console.log(answer);
-
         if(e.target.value === '35') {
             setAnswerError("");
-            setNext(true);
+            setCorrect(true);
         } else {
             setAnswerError("* Please enter the correct answer.");
-            setNext(false);
+            setCorrect(false);
         }
         
     }
 
     const history = useHistory();
     function goToWinPage(e) {
-        if(next === true) {
+        if(correct === true) {
             e.preventDefault();
             console.log('going to win page');
             history.push('/WinPage')
@@ -42,8 +38,7 @@ function SkillTest() {
 
                 <div className="large-6 large-offset-1 small-10 small-offset-1 cell gameBox">
                     <h2>Question</h2>
-                    <p>The question is as follows: </p>
-                    <p>10 + 25 = ?</p>
+                    <h3>10 + 25 = ?</h3>
                     <input type="text" onChange={handleAnswerChange} placeholder="Your Answer"/>
                     <p id="skillTestError" className="errMsg">{answerError}</p>
                     <button id="confirmationBtn" className="submitBtn" onClick={goToWinPage}><p>Submit<span>&#62;</span></p></button>

@@ -5,10 +5,10 @@ function Form(props) {
     const [formError, setFormError] = useState('');
 
     function goToThanks(e) {
-        //if(props.isFNameError === true || props.isLNameError === true || props.isEmailError === true || props.isPhoneError === true || props.isAddressError === true || props.isCityError === true || props.isProvinceError === true || props.isPostalCodeError === true || props.isDOBError === true || props.isCheckboxError === true){
-            //e.preventDefault();
-            //setFormError("* Please complete all required fields.");
-        //} else {
+        if(props.isFNameError === true || props.isLNameError === true || props.isEmailError === true || props.isPhoneError === true || props.isAddressError === true || props.isCityError === true || props.isProvinceError === true || props.isPostalCodeError === true || props.isDOBError === true || props.isCheckboxError === true){
+            e.preventDefault();
+            setFormError("* Please complete all required fields.");
+        } else {
             
 
             const expiryTime = JSON.parse(localStorage.getItem('expiryTime'));
@@ -41,7 +41,7 @@ function Form(props) {
                 isUserWinning(props);
                 props.history.push('/thanks');
             }
-        //}
+        }
     }
 
     function isUserWinning(props) {
@@ -88,7 +88,7 @@ function Form(props) {
                     <p>Winners will be determined by random draw, but may have their entries removed for any reason by the leadership team of BuyMore Dollars Inc.</p>
 
                     <p>Prizes</p>
-                    <ul>
+                    <ul id="formPrizes">
                         <li>1 Prize of 10 000 BuyMore Dollars</li>
                         <li>5 Prizes of 750 BuyMore Dollars</li>
                         <li>10 Prizes of 100 BuyMore Dollars</li>
