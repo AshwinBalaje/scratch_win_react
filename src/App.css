@@ -384,3 +384,7 @@ li a {
 #thanksContainer {
   margin-top: 5rem;
 }
+
+.welcomeBox {
+  text-align: left;
+}

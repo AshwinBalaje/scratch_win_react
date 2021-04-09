@@ -25,7 +25,7 @@ function Home(){
                     <button id="confirmationBtn" className="submitBtn" onClick={goToForm}><p>Start  <span>&#62;</span></p></button>
                 </div>
 
-                <div className="large-12 small-12 cell homeBox">
+                <div className="large-12 small-12 cell homeBox welcomeBox">
                     <h2>Welcome to Buy More Dollars, the Greatest Online Scratch and Win Game in Canada</h2>
                     <p>Here’s something for everyone to enjoy when playing Scratch game online! We offer more than any online Game in Canada, with secure banking that allows you to play with peace of mind.
                         Every time you Win, the value of the jackpot increases, with potential winnings reaching up to 10000 BuyMore Dollars. All gaming, deposits, and withdrawals can be enjoyed with ease thanks to 
