@@ -18,7 +18,7 @@ function Thanks(props){
                     <h1>Thanks {props.fname}! <br/> You are all set.</h1>
                 </div>
 
-                <div className="large-5 large-offset-1 small-10 small-offset-1 cell confirmBox">
+                <div className="large-5 large-offset-1 small-10 small-offset-1 cell confirmBox" id="thanksContainer">
                     <h2>Confirmation</h2>
                     <p>Thanks for registration. Let's play and win some prizes.</p>
                     <button id="confirmationBtn" className="submitBtn" onClick={goToGame}><p>Continue<span>&#62;</span></p></button>
