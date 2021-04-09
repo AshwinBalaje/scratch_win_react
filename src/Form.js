@@ -9,13 +9,44 @@ function Form(props) {
             //e.preventDefault();
             //setFormError("* Please complete all required fields.");
         //} else {
-            e.preventDefault();
-            console.log(props);
-            console.log("will we go anywhere?");
-            setFormError("");
-            isUserWinning(props);
-            props.history.push('/thanks');
+            
+
+            const expiryTime = JSON.parse(localStorage.getItem('expiryTime'));
+            const now = new Date();
+
+            //if nothing is in local storage
+            if(expiryTime === null){ 
+                e.preventDefault();
+                console.log(props);
+                setFormError("");
+                isUserWinning(props);
+                props.history.push('/thanks');
+            
+            //if not expired yet
+            } else if (expiryTime > now.getTime()) {
+                console.log('not eligible for scratchcard');
+                e.preventDefault();
+                console.log(props);
+                setFormError("");
+                props.history.push('/thanksNoGame');
+        
+            //if it expires
+            } else if (expiryTime < now.getTime()) {
+                localStorage.removeItem('expiryTime');
+                console.log('delete expiryTime');
+
+                e.preventDefault();
+                console.log(props);
+                setFormError("");
+                isUserWinning(props);
+                props.history.push('/thanks');
+            }
         //}
+
+        
+        const timeToExpire = 60000; //60000 is 1 min
+	    localStorage.setItem('expiryTime', JSON.stringify(now.getTime() + timeToExpire))
+        console.log('set new expiry time')
     }
 
     function isUserWinning(props) {
@@ -43,6 +74,11 @@ function Form(props) {
             console.log('if winning is between 0.0 to 1');
             props.handleGameMsg('Congratulations! You have won 10000 BuyMore Dollars!');
         }
+
+        const now = new Date();
+        const timeToExpire = 60000; //60000 is 1 min
+        localStorage.setItem('expiryTime', JSON.stringify(now.getTime() + timeToExpire));
+        console.log('set new expiry time');
     }
 
     return (

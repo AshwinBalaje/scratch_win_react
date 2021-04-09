@@ -12,7 +12,7 @@ function Game(props) {
         width: 500,
         height: 483,
         image: image,
-        finishPercent: 80,
+        finishPercent: 60,
         onComplete: () => console.log('The card is now clear!')
     };
     const history = useHistory();

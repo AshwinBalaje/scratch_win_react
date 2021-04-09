@@ -8,6 +8,7 @@ import Home from './Home';
 import Form from './Form';
 import Legal from './Legal';
 import Thanks from './Thanks';
+import ThanksNoGame from './ThanksNoGame';
 import Game from './Game';
 import WinPage from './WinPage';
 import LossPage from './LossPage';
@@ -256,6 +257,7 @@ function App() {
                                                 </Form>}>
           </Route>
           <Route path="/thanks" children={<Thanks fname={fname} lname={lname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} termsCheckbox={termsCheckbox} ></Thanks>}></Route>
+          <Route path="/thanksnogame" children={<ThanksNoGame fname={fname} lname={lname} email={email} phone={phone} address={address} city={city} province={province} postalCode={postalCode} userDOB={userDOB} termsCheckbox={termsCheckbox} ></ThanksNoGame>}></Route>
           <Route path="/game" children={<Game gameMsg={gameMsg}></Game>}></Route>
           <Route path="/legal" component={Legal}></Route> 
           <Route exact path="/" component={Home}></Route>  
