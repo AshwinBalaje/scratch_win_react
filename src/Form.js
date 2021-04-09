@@ -72,7 +72,7 @@ function Form(props) {
 
         //write new expiry time to local storage
         const now = new Date();
-        const timeToExpire = 259200000; //60000 is 1 min, 259 200 000 is 72 hours
+        const timeToExpire = 60000; //60000 is 1 min, 259 200 000 is 72 hours
         localStorage.setItem('expiryTime', JSON.stringify(now.getTime() + timeToExpire));
         console.log('set new expiry time');
     }
@@ -166,12 +166,12 @@ function Form(props) {
                             <p id="termsCheckboxError" className="errMsg">{props.checkboxError}</p>
                         </div>
 
-                        <div className="fieldContainer">
+                        <div className="fieldContainer2">
                             <input type="checkbox" id="marketingCheckbox"/>
                             <label className="labelName">I consent to communications regarding BuyMore Dollar products and sponsors. </label><br/>
                         </div>
                         
-                        <button type="submit" id="formSubmitBtn" className="btns submitBtn"><p>Submit<span>&#62;</span></p></button>
+                        <button type="submit" id="formSubmitBtn" className="submitBtn"><p>Submit<span>&#62;</span></p></button>
                         <p id="formError" className="errMsg">{formError}</p>
                     </form>
                 </div>

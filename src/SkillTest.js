@@ -41,7 +41,7 @@ function SkillTest() {
                     <h3>10 + 25 = ?</h3>
                     <input type="text" onChange={handleAnswerChange} placeholder="Your Answer"/>
                     <p id="skillTestError" className="errMsg">{answerError}</p>
-                    <button id="confirmationBtn" className="submitBtn" onClick={goToWinPage}><p>Submit<span>&#62;</span></p></button>
+                    <button id="formSubmitBtn" className="submitBtn" onClick={goToWinPage}><p>Submit<span>&#62;</span></p></button>
                 </div>
             </div>
         </div>

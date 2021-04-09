@@ -21,7 +21,7 @@ function Thanks(props){
                 <div className="large-5 large-offset-1 small-10 small-offset-1 cell confirmBox">
                     <h2>Confirmation</h2>
                     <p>Thanks for registration. Unfortunately 72 hours has not passed since your last play. Please try again later.</p>
-                    <button id="confirmationBtn" className="submitBtn" onClick={goToHome}><p>Home<span>&#62;</span></p></button>
+                    <button id="formSubmitBtn" className="submitBtn" onClick={goToHome}><p>Home<span>&#62;</span></p></button>
                 </div>
 
             </div>
