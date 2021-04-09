@@ -5,17 +5,17 @@ function Form(props) {
     const [formError, setFormError] = useState('');
 
     function goToThanks(e) {
-        if(props.isFNameError === true || props.isLNameError === true || props.isEmailError === true || props.isPhoneError === true || props.isAddressError === true || props.isCityError === true || props.isProvinceError === true || props.isPostalCodeError === true || props.isDOBError === true || props.isCheckboxError === true){
-            e.preventDefault();
-            setFormError("* Please complete all required fields.");
-        } else {
+        //if(props.isFNameError === true || props.isLNameError === true || props.isEmailError === true || props.isPhoneError === true || props.isAddressError === true || props.isCityError === true || props.isProvinceError === true || props.isPostalCodeError === true || props.isDOBError === true || props.isCheckboxError === true){
+            //e.preventDefault();
+            //setFormError("* Please complete all required fields.");
+        //} else {
             e.preventDefault();
             console.log(props);
             console.log("will we go anywhere?");
             setFormError("");
             isUserWinning(props);
             props.history.push('/thanks');
-        }
+        //}
     }
 
     function isUserWinning(props) {
@@ -25,23 +25,23 @@ function Form(props) {
         let winningChance = winNum/100;
         if(winningChance> 0 && winningChance<0.25) {
             console.log('if winning is between 0 to 0.25');
-            props.handleGameMsg('Please try again');
+            props.handleGameMsg('Sorry, please play again.');
         }
         else if(winningChance>0.25 && winningChance<0.5) {
             console.log('if winning is between 0.25 to 0.5');
-            props.handleGameMsg('Congratulations! You have won 20 BuyMore Dollar Points.');
+            props.handleGameMsg('Congratulations! You have won 20 BuyMore Dollars!');
         }
         else if(winningChance>0.5 && winningChance<0.75) {
             console.log('if winning is between 0.5 to 0.75');
-            props.handleGameMsg('Congratulations! You have won 100 BuyMore Dollar Points.');
+            props.handleGameMsg('Congratulations! You have won 100 BuyMore Dollars!');
         }
         else if(winningChance>0.75 && winningChance<0.9) {
             console.log('if winning is between 0.75 to 0.9');
-            props.handleGameMsg('Congratulations! You have won 750 BuyMore Dollar Points.');
+            props.handleGameMsg('Congratulations! You have won 750 BuyMore Dollars!');
         }
         else {
             console.log('if winning is between 0.0 to 1');
-            props.handleGameMsg('Congratulations! You have won 10000 BuyMore Dollar Points.');
+            props.handleGameMsg('Congratulations! You have won 10000 BuyMore Dollars!');
         }
     }
 

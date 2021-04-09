@@ -208,7 +208,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-
+      <Link to="/Thanks">Thanks</Link>
       <div className="grid-container">
         <div className="grid-x grid-padding-x">
           <div className="large-2 cell">
@@ -259,8 +259,8 @@ function App() {
           <Route path="/game" children={<Game gameMsg={gameMsg}></Game>}></Route>
           <Route path="/legal" component={Legal}></Route> 
           <Route exact path="/" component={Home}></Route>  
-          <Route path="/winpage" component={WinPage}></Route>
-          <Route path="/losspage" component={LossPage}></Route>  
+          <Route path="/winpage" children={<WinPage gameMsg={gameMsg}></WinPage>}></Route>
+          <Route path="/losspage" children={<LossPage gameMsg={gameMsg}></LossPage>}></Route>  
           <Route path="/skilltest" component={SkillTest}></Route>          
         </Switch>
       </div>

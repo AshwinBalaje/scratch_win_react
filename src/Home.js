@@ -29,15 +29,15 @@ function Home(){
                         <h2 className="news">News</h2>
                     <div className="grid-x grid-margin-x grid-padding-x">
                             <div className="cell large-4">
-                                <img src={News1}></img>
+                                <img src={News1} alt="Interior view of Taco Superstore"></img>
                                 <p>Taco Superstore won best restaurant of 2020 in Toronto!</p>
                             </div>
                             <div className="cell large-4">
-                                <img src={News2}></img>
+                                <img src={News2} alt="Tray of burger and fries with card reader for payment"></img>
                                 <p>Glorbotronic Burgers has opened a new location in Oshawa!</p>
                             </div>
                             <div className="cell large-4">
-                                <img src={News3}></img>
+                                <img src={News3} alt="Front view of Kickomatic Store"></img>
                                 <p>Fresh Kicks-o-matic Dispenso Booths is now open later on Sundays!</p>
                             </div>
                     </div>           

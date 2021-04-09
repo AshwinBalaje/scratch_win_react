@@ -84,6 +84,10 @@
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
+.gameBox h2 {
+  margin-bottom: 50px;
+}
+
 .winBox {
   text-align: center;
 }
@@ -336,4 +340,12 @@ li a {
 
 #homeImage {
   width: 50%;
+}
+
+#winningMessage {
+  padding: 100px 20px 0px 20px;
+}
+
+#scratchcardDiv {
+  text-align: center;
 }

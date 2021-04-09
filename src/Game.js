@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 import ScratchCard from 'react-scratchcard';
 import image from './assets/images/scratch.png';
@@ -14,7 +15,17 @@ function Game(props) {
         finishPercent: 80,
         onComplete: () => console.log('The card is now clear!')
     };
-
+    const history = useHistory();
+    function goToWinLoss(e) {
+        e.preventDefault();
+        console.log('going to game page');
+        if(props.gameMsg === "Sorry, please play again."){
+            history.push('/LossPage')
+        } else {
+            history.push('/WinPage')
+        }
+        
+    }
     return (
         <div className="grid-container gameContainer showDiv">
             <div className="grid-x grid-padding-x">
@@ -42,7 +53,10 @@ function Game(props) {
                 <div className="large-6 large-offset-1 small-10 small-offset-1 cell gameBox">
                     <h2>Lucky Scratch</h2>
                     <ScratchCard {...settings}>
-                        {props.gameMsg}
+                        <div id="scratchcardDiv">
+                            <h3 id="winningMessage">{props.gameMsg}</h3>
+                            <button id="winlossBtn" className="submitBtn" onClick={goToWinLoss}><p>Continue<span>&#62;</span></p></button>
+                        </div>
                     </ScratchCard>
                 </div>
             </div>
