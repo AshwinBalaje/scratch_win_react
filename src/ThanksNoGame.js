@@ -18,7 +18,7 @@ function Thanks(props){
                     <h1>Thanks {props.fname}! <br/> Please come back later to play again.</h1>
                 </div>
 
-                <div className="large-5 large-offset-1 small-10 small-offset-1 cell confirmBox">
+                <div className="large-5 large-offset-1 small-10 small-offset-1 cell confirmBox" id="thanksContainer">
                     <h2>Confirmation</h2>
                     <p>Thanks for registration. Unfortunately 72 hours has not passed since your last play. Please try again later.</p>
                     <button id="formSubmitBtn" className="submitBtn" onClick={goToHome}><p>Home<span>&#62;</span></p></button>
