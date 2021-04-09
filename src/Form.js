@@ -86,6 +86,14 @@ function Form(props) {
                     <p>Please fill out the form to enter the contest.</p>
                     <p>Winners of the contest must answer a skill testing question.</p>
                     <p>Winners will be determined by random draw, but may have their entries removed for any reason by the leadership team of BuyMore Dollars Inc.</p>
+
+                    <p>Prizes</p>
+                    <ul>
+                        <li>1 Prize of 10 000 BuyMore Dollars</li>
+                        <li>5 Prizes of 750 BuyMore Dollars</li>
+                        <li>10 Prizes of 100 BuyMore Dollars</li>
+                        <li>100 Prizes of 20 BuyMore Dollars</li>
+                    </ul>
                 </div>
 
                 <div className="large-5 large-offset-1 small-10 small-offset-1 cell formBox">

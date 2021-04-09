@@ -18,11 +18,13 @@ function Game(props) {
     const history = useHistory();
     function goToWinLoss(e) {
         e.preventDefault();
-        console.log('going to game page');
+        
         if(props.gameMsg === "Sorry, please play again."){
+            console.log('going to loss page');
             history.push('/LossPage')
         } else {
-            history.push('/WinPage')
+            console.log('going to skill test page');
+            history.push('/SkillTest')
         }
         
     }
