@@ -72,7 +72,7 @@ function Form(props) {
 
         //write new expiry time to local storage
         const now = new Date();
-        const timeToExpire = 60000; //60000 is 1 min, 259 200 000 is 72 hours
+        const timeToExpire = 259200000; //60000 is 1 min, 259 200 000 is 72 hours
         localStorage.setItem('expiryTime', JSON.stringify(now.getTime() + timeToExpire));
         console.log('set new expiry time');
     }

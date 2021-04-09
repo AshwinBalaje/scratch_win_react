@@ -92,7 +92,7 @@ function Legal(){
                     </p>
 
                     <h2>Contact Us</h2>
-                    <p>If you have any questions about these Terms and Conditions, you can contact us:<br/>By e-mail – admin.square@gmail.com</p>
+                    <p>If you have any questions about these Terms and Conditions, you can contact us:<br/>By e-mail – admin@buymoredollars.com</p>
                 </p></div>
             </div>
         </div>

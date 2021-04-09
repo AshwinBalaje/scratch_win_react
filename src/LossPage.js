@@ -1,4 +1,4 @@
-// import WinImage from './assets/images/WinImage.jpg';
+import LossCoupon from './assets/images/coupon.png';
 import {useHistory} from 'react-router-dom';
 
 function LossPage(props){
@@ -14,7 +14,8 @@ function LossPage(props){
 
                 <div className="large-10 large-offset-1 small-10 small-offset-1 cell titleText gameTitle">
                     <h1 id="">Sorry!</h1>
-                    <p>Unfortunately you have not won a prize! <br/><br/> In consolation, you recieve a $2.00 coupon off of any purchase over $50 from Raw-Cabbage-On-A-Stick Hut! This coupon will be sent to your email.</p>
+                    <p>Unfortunately you have not won a prize! <br/><br/> In consolation, you recieve a $2.00 coupon off of any purchase over $50 from Raw-Cabbage-On-A-Stick Hut! This coupon will also be sent to your email.</p>
+                    <img src={LossCoupon}></img><br/>
                     <button type="submit" id="formSubmitBtn" className="btns submitBtn" onClick={goToHome}><p>Home<span>&#62;</span></p></button>
                 </div>
 
