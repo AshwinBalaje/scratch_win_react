@@ -1,7 +1,6 @@
 import WinImage from './assets/images/WinImage.jpg';
 import {useHistory} from 'react-router-dom';
 
-
 function WinPage(props){
     const history = useHistory();
     function goToSkillTest(e) {

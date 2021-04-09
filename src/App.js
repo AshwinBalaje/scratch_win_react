@@ -200,7 +200,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-
+        <nav><Link to="/Thanks">Thanks</Link></nav>
       <div className="grid-container">
         <div className="grid-x grid-padding-x">
           <div className="large-2 cell">
